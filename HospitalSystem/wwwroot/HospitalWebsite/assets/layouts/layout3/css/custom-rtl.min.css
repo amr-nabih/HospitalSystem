@@ -1,0 +1,178 @@
+/*----by Abdelfattah Arafa ----*/
+
+/*layout*/
+body {
+    font-family: 'Almarai', sans-serif;
+    font-size: 16px;
+}
+.page-header .page-header-top {
+    height: 110px;
+}
+.page-header .page-header-top .page-logo .logo-default {
+    margin: 15px 0;
+    width: 260px;
+}
+.page-header .page-header-top .top-menu .navbar-nav>li.quick-sidebar-toggler {
+    cursor: pointer;
+    padding: 30px 0 0 0;
+}
+.page-header .page-header-top .top-menu .navbar-nav>li.quick-sidebar-toggler>i {
+    color: #e73d4a;
+    font-size: 24px;
+}
+/*menu*/
+.page-header .page-header-menu {
+    background: #121c4f;
+}
+.page-header .page-header-menu .hor-menu .navbar-nav>li.active>a, .page-header .page-header-menu .hor-menu .navbar-nav>li.active>a:hover, .page-header .page-header-menu .hor-menu .navbar-nav>li.current>a, .page-header .page-header-menu .hor-menu .navbar-nav>li.current>a:hover {
+    color: #f1f1f1;
+    background: #3830a0;
+}
+.page-header .page-header-menu .hor-menu .navbar-nav>li .dropdown-menu {
+    background: #3830a0;
+}
+.page-header .page-header-menu .hor-menu .navbar-nav>li.open>a, .page-header .page-header-menu .hor-menu .navbar-nav>li:hover>a, .page-header .page-header-menu .hor-menu .navbar-nav>li>a:active, .page-header .page-header-menu .hor-menu .navbar-nav>li>a:focus, .page-header .page-header-menu .hor-menu .navbar-nav>li>a:hover {
+    color: #fff;
+    background: #3830a0 !important;
+}
+/*search*/
+.page-header .page-header-menu .search-form, .page-header .page-header-menu .search-form .input-group {
+    background: #eee;
+    border-radius: 20px !important;
+}
+.page-header .page-header-menu .search-form .input-group .form-control {
+    color: #616d7d;
+    background: #eee;
+    border-radius: 20px !important;
+}
+/*footer*/
+.page-footer {
+    background: #fff;
+    color: #666;
+    padding: 5px 0;
+}
+.page-footer img {
+    width: 90px !important;
+    margin-bottom: 8px;
+}
+
+/*form*/
+.datetimepicker table {
+    margin: 0;
+    direction: rtl;
+}
+.btn-circle {
+    border-radius: 25px!important;
+    overflow: hidden;
+    padding: 8px 40px;
+}
+.form-control {
+    outline: 0!important;
+    border-radius: 6px !important;
+}
+.date-control {
+    border-radius: 0 6px 6px 0 !important;
+}
+.bs-datetime .input-group-addon {
+    border-radius: 6px 0 0 6px !important;
+}
+
+/*status page*/
+.caption-date {
+    width: 250px;
+    float: left;
+}
+.status-table {
+    padding: 15px;
+}
+.table-bordered>tbody>tr>td {
+    vertical-align: middle;
+    padding: 2px 10px;
+}
+.status-table a {
+    color: #d05454;
+    font-weight: 700;
+    font-size: 16px;
+}
+.status-pagination {
+    margin-right: 10px;
+}
+.status-label {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px;
+    color: #fff;
+    background: #000;
+    border-radius: 6px !important;
+    display: block;
+    text-align: center;
+    width: 70%;
+}
+.preparation {
+    background: #F3C200;
+}
+.operations {
+    background: #e43a45;
+}
+.wake-up {
+    background: #578ebe ;
+}
+.leave {
+    background: #3faba4;
+}
+.show-table {
+    margin: 0;
+}
+.show-table>tbody>tr:nth-of-type(odd) {
+    background-color: #eff3f8;
+}
+/*status page*/
+.login {
+    background: url(../../layout3/img/BG.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Almarai' !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Almarai' !important;
+}
+.login .logo {
+    margin: 30px auto 0;
+    padding: 15px;
+    text-align: center;
+}
+.login img {
+    width: 280px;
+}
+.login .content {
+    margin: 15px auto 10px;
+}
+
+/*index page*/
+.row-index {
+    margin-top: 100px;
+}
+.dashboard-stat {
+    border-radius: 8px !important;
+    padding-top: 80px;
+}
+.dashboard-stat:hover {
+    opacity: 80%;
+}
+/*===== Media =====*/
+@media (max-width: 991px) {
+    .page-header .page-header-top .top-menu .navbar-nav>li.quick-sidebar-toggler {
+        cursor: pointer;
+        padding: 15px 0 0 6px;
+    }
+    .page-header .search-form .input-group .input-group-btn .btn.submit i {
+        color: #666!important;
+    }
+    .page-header .search-form .input-group .input-group-btn .btn.submit {
+        background: transparent;
+    }
+    .page-content-inner {
+        margin-top: 15px;
+    }
+}

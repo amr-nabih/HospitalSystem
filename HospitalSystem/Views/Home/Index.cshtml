@@ -1,0 +1,55 @@
+﻿
+
+<div class="page-container">
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <!-- BEGIN CONTENT BODY -->
+        <!-- BEGIN PAGE CONTENT BODY -->
+        <div class="page-content">
+            <div class="container">
+                <!-- BEGIN PAGE CONTENT INNER -->
+                <div class="page-content-inner">
+                    <div class="row row-index">
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
+                            <div class="dashboard-stat blue">
+                                <div class="visual">
+                                    <i class="fa fa-briefcase fa-icon-medium"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number"> @ViewBag.Number </div>
+                                    <div class="desc"> عدد المرضى المسجلين </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <a asp-action="Index" asp-controller="Patient" class="dashboard-stat red">
+                                <div class="visual">
+                                    <i class="fa fa-plus-circle"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number"> إضافة مريض </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                            <a asp-action="patientStatus" asp-controller="Patient" class="dashboard-stat green">
+                                <div class="visual">
+                                    <i class="fa fa-group fa-icon-medium"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number"> حالات المرضى  </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- END PAGE CONTENT INNER -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT BODY -->
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+</div>
+<!-- END CONTAINER -->

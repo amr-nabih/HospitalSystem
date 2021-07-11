@@ -1,0 +1,266 @@
+﻿@model HospitalSystem.Models.Patients
+
+@{
+    ViewData["Title"] = "إضافة مريض جديد";
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<div class="page-wrapper-row full-height">
+    <div class="page-wrapper-middle">
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container">
+                        <!-- BEGIN PAGE CONTENT INNER -->
+                        <div class="page-content-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!-- BEGIN PORTLET-->
+                                    <div class="portlet light form-fit ">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class="icon-pin font-blue"></i>
+                                                <span class="caption-subject font-blue sbold uppercase">إضافة مريض جديد</span>
+                                                <span class="caption-subject font-blue sbold uppercase">@ViewBag.message</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body form">
+                                            <!-- BEGIN FORM-->
+                                            <form asp-action="Create" class="form-horizontal form-bordered">
+                                                <div class="form-body">
+                                                    <input asp-for="id" type="hidden" class="form-control" />
+                                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">رقم البطاقة</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="IdentityID" class="form-control" id="IdentityID" placeholder="رقم البطاقة" />
+                                                            <span asp-validation-for="IdentityID" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">كود المريض</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="PatientCode" class="form-control" placeholder="كود المريض" />
+                                                            <span asp-validation-for="PatientCode" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">اسم المريض باللغه العربيه</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="PatientName" class="form-control" placeholder="اسم المريض باللغه العربيه" />
+                                                            <span asp-validation-for="PatientName" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">رقم الهاتف</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="PhoneNumber" class="form-control" placeholder="رقم الهاتف" />
+                                                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3"> السن</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="age" class="form-control" placeholder="السن" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3"> النوع</label>
+                                                        <div class="col-md-3">
+                                                            <div class="radio-list">
+
+                                                                @{
+                                                                    if (Model != null)
+                                                                    {
+                                                                        if (Model.Gender == false)
+                                                                        {
+                                                                            <label>
+                                                                                <input type="radio" name="Gender" value="1"> ذكر
+                                                                            </label>
+                                                                            <label>
+                                                                                <input type="radio" name="Gender" checked name="Gender" value="0"> أنثى
+                                                                            </label>
+
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <label>
+                                                                                <input type="radio" checked name="Gender" value="1"> ذكر
+                                                                            </label>
+                                                                            <label>
+                                                                                <input type="radio" name="Gender" value="0"> أنثى
+                                                                            </label>
+                                                                        }
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <label>
+                                                                            <input type="radio" name="Gender" value="1"> ذكر
+                                                                        </label>
+                                                                        <label>
+                                                                            <input type="radio"  name="Gender" value="0"> أنثى
+                                                                        </label>
+                                                                    }
+                                                                }
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">تاريخ الدخول</label>
+                                                        <div class="col-md-3">
+                                                            <div class="input-group date form_datetime form_datetime bs-datetime">
+                                                                <input type="text" asp-for="PtDate" size="16" class="form-control date-control" style="direction: ltr;">
+                                                                <span class="input-group-addon">
+                                                                    <button class="btn default date-set" type="button">
+                                                                        <i class="fa fa-calendar"></i>
+                                                                    </button>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3">الطبيب المعالج</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="DoctorName" class="form-control" placeholder="الطبيب المعالج" />
+                                                            <span asp-validation-for="DoctorName" class="text-danger"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3"> ملاحظات</label>
+                                                        <div class="col-md-3">
+                                                            <textarea asp-for="Note" class="form-control" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label col-md-3"> نشط</label>
+                                                        <div class="col-md-3">
+                                                            <input asp-for="active" name="PatientActive" type="checkbox" >
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="form-actions">
+                                                    <div class="row">
+                                                        <div class="col-md-12 text-right">
+                                                            <button type="submit" class="btn btn-circle btn-info">
+                                                                <i class="fa fa-check"></i> حفظ
+                                                            </button>
+                                                            <button type="button" asp-action="index" asp-controller="home" class="btn btn-circle btn-default">إلغاء</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div id="form_modal1" class="modal fade" role="dialog" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                            <h4 class="modal-title">Datetimepicker in Modal</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="#" class="form-horizontal">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Default Datetimepicker</label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-group date form_datetime form_datetime bs-datetime">
+                                                                            <input type="text" size="16" class="form-control">
+                                                                            <span class="input-group-addon">
+                                                                                <button class="btn default date-set" type="button">
+                                                                                    <i class="fa fa-calendar"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Advance Datetimepicker</label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-group date form_datetime bs-datetime" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p">
+                                                                            <input class="form-control" size="16" type="text" value="" readonly>
+                                                                            <span class="input-group-addon">
+                                                                                <button class="btn default date-reset" type="button">
+                                                                                    <i class="fa fa-times"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                            <span class="input-group-addon">
+                                                                                <button class="btn default date-set" type="button">
+                                                                                    <i class="fa fa-calendar"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Meridian Format</label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="input-group date form_meridian_datetime form_datetime bs-datetime" data-date="2012-12-21T15:25:00Z">
+                                                                            <input type="text" size="16" class="form-control">
+                                                                            <span class="input-group-addon">
+                                                                                <button class="btn default date-reset" type="button">
+                                                                                    <i class="fa fa-times"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                            <span class="input-group-addon">
+                                                                                <button class="btn default date-set" type="button">
+                                                                                    <i class="fa fa-calendar"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Inline</label>
+                                                                    <div class="col-md-9">
+                                                                        <div class="form_datetime form_datetime bs-datetime" data-date="2012-12-21T15:25:00Z"> </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
+                                                            <button class="btn green btn-primary" data-dismiss="modal">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- END FORM-->
+                                        </div>
+                                    </div>
+                                    <!-- END PORTLET-->
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END CONTAINER -->
+    </div>
+</div>
+<script>
+    const func = () => {
+        alert('Hello after 4 seconds');
+    };
+    setTimeout(func, 4 * 1000);
+</script>
+<script>
+    //IdentityID
+
+
+
+</script>
